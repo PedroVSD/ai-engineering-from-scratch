@@ -3,122 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Data Science from Scratch — Piloto Local</title>
+<title>Data Science from Scratch — Local</title>
 <style>
 :root{--bg:#fafaf5;--fg:#1a1a1a;--accent:#0e8a5a;--card:#fff;--muted:#6b7280}
 *{box-sizing:border-box;font-family:JetBrains Mono,monospace}
 body{margin:0;background:var(--bg);color:var(--fg)}
 header{padding:2rem;text-align:center;border-bottom:3px solid var(--accent)}
-header h1{margin:0;font-size:1.8rem}
-header p{color:var(--muted)}
-.container{max-width:900px;margin:0 auto;padding:2rem}
-.card{background:var(--card);border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;margin:1rem 0}
-.card h3{margin-top:0;color:var(--accent)}
+.container{max-width:1000px;margin:0 auto;padding:2rem}
+.card{background:var(--card);border:1px solid #e5e7eb;border-radius:12px;padding:1.2rem;margin:1rem 0}
 .badge{display:inline-block;background:var(--accent);color:#fff;padding:2px 8px;border-radius:999px;font-size:.7rem}
-pre{background:#111;color:#0f0;padding:1rem;border-radius:8px;overflow:auto}
+.badge.novo{background:#7c3aed}
+.muted{color:var(--muted)}
+pre{background:#111;color:#0f0;padding:.8rem;border-radius:8px;overflow:auto}
 a{color:var(--accent)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:700px){.grid{grid-template-columns:1fr}}
+#search{width:100%;padding:.7rem;border-radius:8px;border:1px solid #ccc;font-size:1rem}
+#phases{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.phase{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:.6rem}
+.phase.done{border-left:5px solid var(--accent)}
+@media(max-width:700px){#phases{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
-<h1>📊 Data Science from Scratch — Piloto</h1>
-<p>5 aulas piloto • Build It / Use It • 100% local • Python stdlib-first</p>
-<p><span class="badge">20 fases planejadas</span> <span class="badge">deep learning incluso</span></p>
+<h1>📊 Data Science from Scratch — Local</h1>
+<p id="count"></p>
+<p><input id="search" placeholder="buscar aula… (ex: bayes, mlp, tracking)"></p>
 </header>
 <div class="container">
 <div class="card">
-<h3>Como rodar local (sem internet)</h3>
-<pre>python phases/20-data-science-foundations/01-estatistica-descritiva/code/main.py
-python -m unittest discover phases/20-data-science-foundations/01-estatistica-descritiva/code/tests -v
-
-# site local
-python -m http.server 8000 --directory site-ds
-# abra http://localhost:8000</pre>
-<p>Este site é estático. O site original do projeto é gerado por <code>node site/build.js</code> que lê <code>README.md</code>. Quando quiser publicar as 5 aulas, copie as linhas do <code>phases/20-data-science-foundations/README.md</code> para o <code>README.md</code> raiz e rode o build.</p>
+<h3>Como rodar local</h3>
+<pre>python phases/20-data-science-foundations/06-probabilidade-fundamentos/code/main.py
+python -m unittest discover phases/20-data-science-foundations/06-probabilidade-fundamentos/code/tests -v
+python -m http.server 8000 --directory site-ds  # http://localhost:8000</pre>
+<p class="muted">Plano canônico: DATA_SCIENCE_FROM_SCRATCH.md (~642 aulas). Este site lê o catálogo em app.js.</p>
 </div>
-
-<h2>Fase Piloto — 20-data-science-foundations</h2>
-
-<div class="card">
-<h3>01 — Estatística Descritiva do Zero</h3>
-<p>Média, mediana, IQR, z-score e histograma sem pandas. Build: stdlib. Use: numpy.</p>
-<pre>python phases/20-data-science-foundations/01-estatistica-descritiva/code/main.py</pre>
-<a href="../phases/20-data-science-foundations/01-estatistica-descritiva/docs/en.md">docs/en.md</a> • <a href="../phases/20-data-science-foundations/01-estatistica-descritiva/quiz.json">quiz.json</a>
+<h2>Aulas implementadas</h2>
+<div id="lessons"></div>
+<h2>Roadmap 20 fases</h2>
+<div id="phases"></div>
 </div>
-
-<div class="card">
-<h3>02 — Limpeza e EDA do Zero</h3>
-<p>Missing, duplicatas, correlação de Pearson do zero. Depois pandas.</p>
-<pre>python phases/20-data-science-foundations/02-limpeza-e-eda/code/main.py</pre>
-</div>
-
-<div class="card">
-<h3>03 — Regressão Linear do Zero</h3>
-<p>Gradiente descendente manual, equação normal, R². Depois sklearn.</p>
-<pre>python phases/20-data-science-foundations/03-regressao-do-zero/code/main.py</pre>
-</div>
-
-<div class="card">
-<h3>04 — Classificação e Avaliação</h3>
-<p>Logística + matriz de confusão + ROC/AUC. Por que acurácia mente.</p>
-<pre>python phases/20-data-science-foundations/04-classificacao-e-avaliacao/code/main.py</pre>
-</div>
-
-<div class="card">
-<h3>05 — Perceptron e Deep Learning do Zero</h3>
-<p>Perceptron falha no XOR. MLP com ReLU + backprop manual resolve. Depois torch.</p>
-<pre>python phases/20-data-science-foundations/05-intro-deep-learning-perceptron/code/main.py</pre>
-</div>
-
-<div class="card">
-<h3>Roadmap completo (20 fases)</h3>
-<div class="grid">
-<div>
-<b>Fases 1-11 — Data Science</b>
-<ol>
-<li>Fundamentos</li>
-<li>Estatística & Probabilidade</li>
-<li>Visualização & EDA</li>
-<li>Limpeza & Qualidade</li>
-<li>SQL Avançado</li>
-<li>Regressão/Classificação</li>
-<li>Avaliação & Feature Eng.</li>
-<li>Não-Supervisionado</li>
-<li>Séries Temporais</li>
-<li>A/B Testing</li>
-<li>Pipeline ETL (Polars/DuckDB)</li>
-</ol>
-</div>
-<div>
-<b>Fases 12-17 — Deep Learning</b>
-<ol start="12">
-<li>Redes Neurais & Backprop</li>
-<li>Otimização (Adam/BatchNorm)</li>
-<li>CNNs</li>
-<li>RNNs/Transformers</li>
-<li>Autoencoders</li>
-<li>MLOps / Deploy</li>
-</ol>
-<b>Fases 18-20 — Capstone</b>
-<ul>
-<li>Tabular end-to-end</li>
-<li>Deep Learning (Visão/NLP)</li>
-<li>Dashboard & Portfólio</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class="card">
-<h3>Próximos passos</h3>
-<ul>
-<li>Valide o piloto: rode os 5 <code>main.py</code> + testes</li>
-<li>Escolha a Fase 01 completa (26 aulas) ou expanda a 05 para CNN</li>
-<li>Quando publicar: adicione 5 linhas ao README raiz → <code>node site/build.js</code> → site gera <code>site/data.js</code></li>
-</ul>
-</div>
-</div>
+<script src="app.js"></script>
 </body>
 </html>

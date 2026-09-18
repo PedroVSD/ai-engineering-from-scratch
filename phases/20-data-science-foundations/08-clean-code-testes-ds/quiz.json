@@ -1,0 +1,48 @@
+{
+  "lesson": "08-clean-code-testes-ds",
+  "title": "Clean Code e Testes para Data Science",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Por que um notebook que roda na sua máquina costuma quebrar na máquina do colega?",
+      "options": ["Notebooks são lentos demais", "Estado oculto e células executadas fora de ordem tornam o resultado não-determinístico", "Python muda de versão sozinho", "Gráficos não funcionam em outro PC"],
+      "correct": 1,
+      "explanation": "Variáveis globais mutáveis e execução fora de ordem criam dependências implícitas que 'Run All' expõe."
+    },
+    {
+      "stage": "check",
+      "question": "O que caracteriza uma função pura no pipeline?",
+      "options": ["Usa variáveis globais para ser rápida", "Mesma entrada gera mesma saída, sem mutar argumentos nem ler global", "Faz I/O no meio do pipeline", "Tem no máximo 3 linhas"],
+      "correct": 1,
+      "explanation": "Pureza = dependências explícitas por parâmetro e retorno novo, o que permite teste isolado."
+    },
+    {
+      "stage": "check",
+      "question": "Onde validar o schema dos dados?",
+      "options": ["No final, só se der erro", "Na borda/entrada, falhando rápido com linha e coluna", "Dentro de cada plot", "Nunca, validação atrasa a entrega"],
+      "correct": 1,
+      "explanation": "Validar na entrada evita corrupção silenciosa adiante e dá mensagem útil."
+    },
+    {
+      "stage": "check",
+      "question": "Na pirâmide de testes para DS, o que fica na base?",
+      "options": ["Testes ponta-a-ponta com dados reais", "Testes unitários de funções puras e de contrato/schema: rápidos e muitos", "Testes manuais no notebook", "Nenhum teste, só code review"],
+      "correct": 1,
+      "explanation": "A base tem muitos testes rápidos que rodam a cada commit; o topo (e2e) é lento e escasso."
+    },
+    {
+      "stage": "post",
+      "question": "check_quality retorna sem_duplicatas=False. Qual a causa provável?",
+      "options": ["Duas linhas com mesma chave (nome, idade)", "Salário negativo", "Idade acima de 120", "Nome com espaço extra"],
+      "correct": 0,
+      "explanation": "O check compara o conjunto de (nome, idade) com o total de linhas para detectar duplicatas."
+    },
+    {
+      "stage": "post",
+      "question": "Por que um invariante de negócio (ex: salário mediano > 0) vale mais que um teste de tipo?",
+      "options": ["É mais fácil de escrever", "Tipos nunca falham", "Captura corrupção semântica que passa na validação de tipos", "Roda mais rápido"],
+      "correct": 2,
+      "explanation": "Tipos garantem formato; invariantes de negócio detectam dados válidos no formato mas errados no significado."
+    }
+  ]
+}

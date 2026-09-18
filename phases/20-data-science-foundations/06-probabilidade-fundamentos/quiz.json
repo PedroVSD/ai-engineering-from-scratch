@@ -1,0 +1,48 @@
+{
+  "lesson": "06-probabilidade-fundamentos",
+  "title": "Probabilidade do Zero: Condicional, Total e Bayes",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Um teste com 99% de sensibilidade deu positivo numa doença que atinge 1 em 1000. Por que a chance real de doença é ~2% e não 99%?",
+      "options": ["O teste está quebrado", "A taxa-base (prior) é minúscula: saudáveis geram muito mais falso-positivos que doentes geram verdadeiros", "Especificidade não importa", "Bayes só vale para moedas"],
+      "correct": 1,
+      "explanation": "P(doente|+) = 0.99·0.001/(0.99·0.001+0.05·0.999) ≈ 2%. Ignorar o prior é a falácia da taxa-base."
+    },
+    {
+      "stage": "check",
+      "question": "Dado justo, B='saiu par'. Quanto vale P('saiu 6'|B)?",
+      "options": ["1/6", "1/2", "1/3", "1/4"],
+      "correct": 2,
+      "explanation": "P(6∩par)/P(par) = (1/6)/(3/6) = 1/3."
+    },
+    {
+      "stage": "check",
+      "question": "A e B são independentes se e somente se:",
+      "options": ["P(A|B) = P(B)", "P(A∩B) = P(A)·P(B)", "P(A∪B) = 0", "P(A|B) > P(A)"],
+      "correct": 1,
+      "explanation": "Independência é a regra do produto: a conjunta fatoriza."
+    },
+    {
+      "stage": "check",
+      "question": "Quando usar a lei da probabilidade total?",
+      "options": ["Para somar PMFs diferentes", "Para decompor P(A) em cenários mutuamente exclusivos: Σ P(A|Bi)·P(Bi)", "Só quando A e B são independentes", "Para calcular variância"],
+      "correct": 1,
+      "explanation": "A lei da totalidade particiona o espaço e pondera cada cenário pelo seu prior."
+    },
+    {
+      "stage": "post",
+      "question": "No filtro de spam (98% detecção, 2% falso-positivo, 30% spam), qual P(spam|marcado)?",
+      "options": ["98%", "30%", "~95%", "~50%"],
+      "correct": 2,
+      "explanation": "0.98·0.30/(0.98·0.30+0.02·0.70) = 0.294/0.308 ≈ 95%."
+    },
+    {
+      "stage": "post",
+      "question": "A esperança de um dado justo vale 3.5. O que isso significa?",
+      "options": ["Todo lançamento dá 3.5", "A média de muitos lançamentos converge para 3.5 (Σ x·P(x))", "A variância é 3.5", "A PMF soma 3.5"],
+      "correct": 1,
+      "explanation": "Esperança é o valor teórico de longo prazo, não um resultado observável."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "lesson": "09-reprodutibilidade-tracking",
+  "title": "Reprodutibilidade e Tracking de Experimentos",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Você roda o mesmo treino duas vezes e obtém 0.87 e 0.83 sem mudar nada. Qual a causa mais provável?",
+      "options": ["Bug no print", "Aleatoriedade não fixada (seed, shuffle, split)", "CPU muito rápida", "Dataset grande demais"],
+      "correct": 1,
+      "explanation": "Splits, shuffles e inicializações sorteiam valores; sem seed fixada cada run é um experimento diferente."
+    },
+    {
+      "stage": "check",
+      "question": "O que random.seed(42) garante?",
+      "options": ["Código mais rápido", "A mesma sequência pseudo-aleatória a cada execução", "Melhor acurácia", "Menos memória"],
+      "correct": 1,
+      "explanation": "A seed fixa o estado inicial do gerador, então todos os sorteios seguintes se repetem."
+    },
+    {
+      "stage": "check",
+      "question": "Por que versionar o dataset com hash SHA-256 em vez do nome do arquivo?",
+      "options": ["Hash é mais curto", "Nome de arquivo mente; hash muda com qualquer alteração de conteúdo", "SHA-256 acelera o treino", "Nomes não aceitam acentos"],
+      "correct": 1,
+      "explanation": "O hash é derivado do conteúdo canônico: mesmo hash = mesmos bytes; qualquer edição muda o hash."
+    },
+    {
+      "stage": "check",
+      "question": "O que cada linha do JSONL de runs deve conter?",
+      "options": ["Só a acurácia final", "timestamp + seed + dataset_hash + params + metrics", "O código-fonte inteiro", "Gráficos em base64"],
+      "correct": 1,
+      "explanation": "Esse contrato mínimo permite reproduzir (seed/hash/params) e comparar (metrics) qualquer run."
+    },
+    {
+      "stage": "post",
+      "question": "Duas runs têm mae 2.0 e 0.5. best_run com higher=False retorna qual?",
+      "options": ["A de mae 2.0", "A de mae 0.5 (menor erro vence)", "Erro, é preciso higher=True", "A mais recente"],
+      "correct": 1,
+      "explanation": "Para métrica de erro, menor é melhor, então higher=False escolhe mae 0.5."
+    },
+    {
+      "stage": "post",
+      "question": "Por que usar random.Random(seed) local em vez de só random.seed global no split?",
+      "options": ["É mais rápido", "Não polui o estado global, então outras partes do código continuam reproduzíveis", "Gera números maiores", "Evita importar random"],
+      "correct": 1,
+      "explanation": "A instância local isola o sorteio do split do restante do programa, evitando efeitos colaterais na ordem de execução."
+    }
+  ]
+}

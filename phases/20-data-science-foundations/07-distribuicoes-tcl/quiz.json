@@ -1,0 +1,48 @@
+{
+  "lesson": "07-distribuicoes-tcl",
+  "title": "Distribuições e o Teorema Central do Limite",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "O tempo de resposta de uma API é exponencial (assimétrico). Por que a média de 30 requisições pode ser tratada como normal?",
+      "options": ["Porque a exponencial é simétrica", "Pelo TCL: a média amostral converge para Normal(μ,σ²/n) mesmo com base assimétrica", "Porque n=30 zera a variância", "Nunca pode — médias herdam a assimetria"],
+      "correct": 1,
+      "explanation": "O TCL garante que X̄→Normal(μ,σ²/n) para qualquer base com variância finita."
+    },
+    {
+      "stage": "check",
+      "question": "Binomial(n,p) é a soma de n Bernoullis. Quanto valem E e Var?",
+      "options": ["E=np, Var=np(1-p)", "E=p, Var=p", "E=λ, Var=λ", "E=n, Var=p"],
+      "correct": 0,
+      "explanation": "Linearidade da esperança e soma de variâncias independentes: np e np(1-p)."
+    },
+    {
+      "stage": "check",
+      "question": "Qual a relação entre Binomial e Poisson?",
+      "options": ["São idênticas", "Poisson é o limite da Binomial com n grande, p pequeno e np=λ fixo", "Binomial é contínua e Poisson discreta", "Não há relação"],
+      "correct": 1,
+      "explanation": "Eventos raros: Binomial(100,0.02) ≈ Poisson(2)."
+    },
+    {
+      "stage": "check",
+      "question": "A Exponencial(λ) é 'sem memória'. O que isso significa?",
+      "options": ["Esquece λ após cada amostra", "P(T>s+t|T>s) = P(T>t): o passado não muda a espera restante", "Tem variância zero", "É simétrica como a Normal"],
+      "correct": 1,
+      "explanation": "Tempo entre eventos de Poisson: já esperou s, a espera restante distribui igual."
+    },
+    {
+      "stage": "post",
+      "question": "Na simulação do TCL com base exp(1) e n=30, para onde convergem E[X̄] e Var(X̄)?",
+      "options": ["E→0, Var→1", "E→1.0, Var→1/30≈0.0333", "E→30, Var→30", "E→0.5, Var→1/12"],
+      "correct": 1,
+      "explanation": "E[X̄]=μ=1 e Var(X̄)=σ²/n=1/30, pois exp(1) tem μ=σ²=1."
+    },
+    {
+      "stage": "post",
+      "question": "Por que o TCL falha para a distribuição de Cauchy?",
+      "options": ["Porque é simétrica", "Porque tem variância infinita — a hipótese do TCL não vale", "Porque é discreta", "Porque n=30 é pequeno demais sempre"],
+      "correct": 1,
+      "explanation": "O TCL exige variância finita; Cauchy tem caudas tão pesadas que médias não normalizam."
+    }
+  ]
+}
