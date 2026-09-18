@@ -1,0 +1,12 @@
+{
+  "lesson": "03-regressao-do-zero",
+  "title": "Regressão Linear do Zero",
+  "questions": [
+    {"stage": "pre","question": "O que o MSE mede?","options": ["Acurácia","Média dos erros quadrados","Taxa de aprendizado","Número de features"],"correct": 1,"explanation": "MSE = (1/n) sum((pred - true)^2)."},
+    {"stage": "check","question": "Gradiente dw para MSE é:","options": ["(2/n) sum((y_hat - y)*x)","sum(x)","média de y","1/n"],"correct": 0,"explanation": "Derivada do MSE em relação a w."},
+    {"stage": "check","question": "R2=1 significa:","options": ["Pior que média","Perfeito","Sem dados","Overfitting certo"],"correct": 1,"explanation": "Explica 100% da variância."},
+    {"stage": "check","question": "Quando usar equação normal?","options": ["Milhões de features","Poucas features e n pequeno","Sempre","Nunca"],"correct": 1,"explanation": "O(n^3) em features, inviável em alta dimensão."},
+    {"stage": "post","question": "Sem scaling, features com escalas diferentes causam:","options": ["Convergência mais rápida","Superfície alongada e convergência lenta","R2=1","Sem efeito"],"correct": 1,"explanation": "Gradiente oscila em vale alongado."},
+    {"stage": "post","question": "Ridge (L2) faz:","options": ["Aumenta pesos","Encolhe pesos para evitar overfitting","Remove dados","Zera R2"],"correct": 1,"explanation": "Penaliza soma dos quadrados dos pesos."}
+  ]
+}

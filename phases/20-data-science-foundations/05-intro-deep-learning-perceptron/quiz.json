@@ -1,0 +1,12 @@
+{
+  "lesson": "05-intro-deep-learning-perceptron",
+  "title": "Perceptron e Deep Learning do Zero",
+  "questions": [
+    {"stage": "pre","question": "O perceptron consegue separar XOR?","options": ["Sim, sempre","Não, XOR não é linearmente separável","Sim, com 1 feature","Só com normalização"],"correct": 1,"explanation": "XOR exige fronteira não-linear."},
+    {"stage": "check","question": "Update do perceptron: quando erra, faz:","options": ["w += lr*(y_true - y_pred)*x","w = 0","w += lr*x sempre","Nada"],"correct": 0,"explanation": "Regra de Rosenblatt, corrige proporcional ao erro."},
+    {"stage": "check","question": "Por que ReLU ajuda vs sigmoide na oculta?","options": ["É mais lenta","Evita saturação e gradiente some","Só funciona em regressão","Não muda nada"],"correct": 1,"explanation": "Sigmoide satura, ReLU mantém gradiente 1 para z>0."},
+    {"stage": "check","question": "O que o MLP de 1 camada oculta adiciona ao perceptron?","options": ["Só mais parâmetros lineares","Combinação de retas + não-linearidade para fronteiras curvas","Remove o bias","Piora XOR"],"correct": 1,"explanation": "Oculta + ReLU cria fronteiras não-lineares."},
+    {"stage": "post","question": "Backprop é:","options": ["Busca aleatória","Aplicação da regra da cadeia para propagar gradientes","Apenas forward pass","Normalização"],"correct": 1,"explanation": "Calcula dLoss/dW camada a camada."},
+    {"stage": "post","question": "Se MLP não aprende XOR, o que tentar primeiro?","options": ["Diminuir hidden para 1","Aumentar hidden/epochs e checar LR","Remover ReLU","Usar só perceptron"],"correct": 1,"explanation": "Capacidade e otimização são primeiros culpados."}
+  ]
+}

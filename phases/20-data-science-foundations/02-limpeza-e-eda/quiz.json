@@ -1,0 +1,12 @@
+{
+  "lesson": "02-limpeza-e-eda",
+  "title": "Limpeza e EDA do Zero",
+  "questions": [
+    {"stage": "pre","question": "Qual o maior risco de treinar sem limpar missing/duplicatas?","options": ["O modelo fica mais lento","O modelo aprende padrões espúrios e generaliza mal","A acurácia sempre aumenta","Nada muda"],"correct": 1,"explanation": "Lixo entra, lixo sai — modelo memoriza artefatos."},
+    {"stage": "check","question": "Quando usar mediana em vez de média para imputar?","options": ["Sempre usar média","Quando há outliers/assimetria","Quando não há missing","Só para texto"],"correct": 1,"explanation": "Mediana é robusta a outliers."},
+    {"stage": "check","question": "Pearson r=0.95 indica:","options": ["Relação linear forte","Sem relação","Relação não-linear forte","Erro de dados"],"correct": 0,"explanation": "Pearson mede linearidade; próximo de 1 é forte."},
+    {"stage": "check","question": "Duplicatas idênticas afetam:","options": ["Só o gráfico","Vazam para teste e inflacionam métricas","Nada","Só a média"],"correct": 1,"explanation": "Duplicatas entre treino/teste causam vazamento."},
+    {"stage": "post","question": "MNAR significa:","options": ["Missing aleatório","Missing depende do próprio valor ausente","Sem missing","Erro de digitação"],"correct": 1,"explanation": "MNAR é o caso mais difícil, imputação simples viesada."},
+    {"stage": "post","question": "Por que preferir imputação por grupo (ex: mediana por dept)?","options": ["Mais rápido","Preserva heterogeneidade entre grupos","Remove outliers","Não precisa de código"],"correct": 1,"explanation": "Grupos têm distribuições diferentes; imputar global distorce."}
+  ]
+}

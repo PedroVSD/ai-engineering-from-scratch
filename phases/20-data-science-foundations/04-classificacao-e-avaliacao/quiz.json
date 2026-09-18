@@ -1,0 +1,12 @@
+{
+  "lesson": "04-classificacao-e-avaliacao",
+  "title": "Classificação e Avaliação",
+  "questions": [
+    {"stage": "pre","question": "Por que acurácia falha em dados 95/5 desbalanceados?","options": ["Sempre funciona","Prever sempre a classe majoritária dá 95% e parece bom","Precisa de mais dados","R2 é melhor"],"correct": 1,"explanation": "Acurácia alta esconde recall zero na minoria."},
+    {"stage": "check","question": "Precisão =","options": ["TP/(TP+FP)","TP/(TP+FN)","TN/(TN+FP)","TP+TN/total"],"correct": 0,"explanation": "Frações de acertos entre os previstos positivos."},
+    {"stage": "check","question": "Recall baixo significa:","options": ["Muitos FP","Muitos FN (perde positivos)","Muitos TN","Sem erro"],"correct": 1,"explanation": "Recall = TP/(TP+FN), baixo = perde casos reais."},
+    {"stage": "check","question": "AUC 0.5 significa:","options": ["Perfeito","Aleatório","Pior que aleatório","Indefinido"],"correct": 1,"explanation": "Diagonal ROC, sem poder discriminativo."},
+    {"stage": "post","question": "Aumentar threshold de 0.5 para 0.8:","options": ["Aumenta recall, diminui precisão","Aumenta precisão, diminui recall","Aumenta ambos","Não muda"],"correct": 1,"explanation": "Mais conservador para chamar positivo."},
+    {"stage": "post","question": "F1 é:","options": ["Média aritmética P/R","Média harmônica P/R","Máximo P/R","Mínimo P/R"],"correct": 1,"explanation": "F1 = 2PR/(P+R), pune desbalanço entre P e R."}
+  ]
+}

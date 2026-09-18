@@ -1,0 +1,48 @@
+{
+  "lesson": "01-estatistica-descritiva",
+  "title": "Estatística Descritiva do Zero",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Por que a média salarial pode ser enganosa quando há um CEO com salário muito alto?",
+      "options": ["A média ignora os menores salários", "A média é sensível a outliers e é puxada para cima", "A mediana sempre é maior que a média", "O desvio-padrão corrige a média"],
+      "correct": 1,
+      "explanation": "A média soma todos os valores, então um outlier extremo puxa o valor para cima, enquanto a mediana permanece robusta."
+    },
+    {
+      "stage": "check",
+      "question": "Para dados [2,3,3,5,500], qual medida de centro é mais robusta?",
+      "options": ["Média = 102.6", "Mediana = 3", "Desvio-padrão = 200", "Variância = 40000"],
+      "correct": 1,
+      "explanation": "A mediana (3) ignora o outlier 500, enquanto a média é distorcida."
+    },
+    {
+      "stage": "check",
+      "question": "O que o IQR mede?",
+      "options": ["A distância entre mínimo e máximo", "A amplitude dos 50% centrais (Q3-Q1)", "A média dos z-scores", "O erro da regressão"],
+      "correct": 1,
+      "explanation": "IQR = Q3 - Q1, cobre os 50% centrais e é robusto a outliers."
+    },
+    {
+      "stage": "check",
+      "question": "Quando o z-score falha para detectar outliers?",
+      "options": ["Quando os dados são normais", "Quando há muitos dados", "Quando a distribuição é assimétrica (usa média/desvio)", "Quando o IQR é zero"],
+      "correct": 2,
+      "explanation": "Z-score assume simetria/normalidade (média e desvio). Em distribuições assimétricas como salários, IQR é melhor."
+    },
+    {
+      "stage": "post",
+      "question": "Regra de Tukey com k=1.5: outlier se x < Q1-1.5*IQR ou x > Q3+1.5*IQR. Se aumentar k para 3.0, o que acontece?",
+      "options": ["Detecta mais outliers", "Detecta menos outliers (critério mais rígido)", "Não muda nada", "Zera o IQR"],
+      "correct": 1,
+      "explanation": "Maior k alarga os limites, então menos pontos são classificados como outliers."
+    },
+    {
+      "stage": "post",
+      "question": "Se média >> mediana, o que isso indica sobre a forma da distribuição?",
+      "options": ["Simétrica", "Assimétrica à direita (cauda longa para cima)", "Assimétrica à esquerda", "Bimodal"],
+      "correct": 1,
+      "explanation": "Cauda à direita puxa a média para cima; mediana fica menor."
+    }
+  ]
+}
