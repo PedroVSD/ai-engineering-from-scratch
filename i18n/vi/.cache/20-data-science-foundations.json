@@ -1,0 +1,11 @@
+{
+  "phases/20-data-science-foundations/01-estatistica-descritiva/docs/en.md": "58efc6faef96136a10b51bdd183f6daacdc903dce7658691f23650893b9c6183",
+  "phases/20-data-science-foundations/02-limpeza-e-eda/docs/en.md": "9760822e47b5a03039a7fb1dd516abe841977bb05a0670cda6320405fc615ca2",
+  "phases/20-data-science-foundations/03-regressao-do-zero/docs/en.md": "6decf4b3fbabd30b27f119674d7e11a89269dece5064876890c4c9c694c38370",
+  "phases/20-data-science-foundations/04-classificacao-e-avaliacao/docs/en.md": "f5c8c71561c69745e04e65db36866aa8a990b0396ba2948e686d3bcc9dab8f92",
+  "phases/20-data-science-foundations/05-intro-deep-learning-perceptron/docs/en.md": "b7921a30a407956c8aa6485f379890fd0c8e97d3e32ee84dcd95dae9f5bf3ee2",
+  "phases/20-data-science-foundations/06-probabilidade-fundamentos/docs/en.md": "4d1d1e66424a81481c075aa01a9835a42d3ac2c76fb345d497b62ca62bc39d60",
+  "phases/20-data-science-foundations/07-distribuicoes-tcl/docs/en.md": "bd52f5b59169792a9500e652f9944cf9757af5a38fcb2c75c744402d3fd1b35f",
+  "phases/20-data-science-foundations/08-clean-code-testes-ds/docs/en.md": "e3b06dbd38e002cbc5f029cfe8ff8f0413022e2735a413e52d0dfeda32b5ef8c",
+  "phases/20-data-science-foundations/09-reprodutibilidade-tracking/docs/en.md": "8df676003e94fe79cf262287f84f7c3f17a7f6275aebe4a451cbdee4d9a8ab0d"
+}
